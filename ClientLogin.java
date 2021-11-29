@@ -98,24 +98,56 @@ public class ClientLogin extends Application implements EventHandler<ActionEvent
    public void handle(ActionEvent ae) {
       switch(((Button)ae.getSource()).getText()) {
          case "Send Message":
-            //doSendMessage();
+            doSendMessage();
             break;
          case "Connect":
-            //doConnect();
+            doConnect();
             break;
          case "Disconnect":
-            //doDisconnect();
+            doDisconnect();
             break;
       }
    }
    
-//    public void doSendMessage() {
-//    }
-//    
-//    public void doConnect() {
-//    }
-//    
+    public void doSendMessage() {
+         if(taMessages.isEmpty(true))
+         {
+            System.out.println("Message not typed");
+            break;
+         }
+         //check if message is typed in the box
+         // if yes, continue bla bla bla
+         // else, report error and dont do anything else
+    }
+    
+    public void doConnect() {
+         if(strPort.isEmpty(true) || strIP.isEmpty(true))
+         {
+            if(strPort.isValid(true) || strIP.isValid(true) // this probably doesn't work we need to figure this out cause idk what to do here
+            {
+            }
+            else
+            {
+               System.out.println("Either the IP or the Port is not valid");
+               break;
+            }
+         }
+         else
+         {
+            System.out.println("Either the IP or the Port is not typed.");
+            break;
+         }
+         //check if IP and Port are filled out
+         //if so, check if valid
+            // if valid, connect
+            // if not valid, report error dont do anything else
+         //if not, report error, dont do anything
+    }
+    
 //    public void doDisconnect() {
+         //check if connected is true
+         //if true, set it to false and remove IP/PORT
+         //if false, report error and do nothing
 //    }
    
 }
